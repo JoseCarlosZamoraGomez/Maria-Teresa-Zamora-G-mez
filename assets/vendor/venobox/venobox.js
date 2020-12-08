@@ -25,7 +25,7 @@
     var twitterIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/></svg>';
     var linkedinIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>';
     var downloadIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 9h-4v-1h4v1zm0-3v1h-4v-1h4zm-2 13l-6-6h4v-3h4v3h4l-6 6z"/></svg>';
-
+   
     $.fn.extend({
         //plugin name - venobox
         venobox: function(options) {
@@ -79,7 +79,7 @@
 
                 // Prevent double initialization - thanx @matthistuff
                 if (obj.data('venobox')) {
-                    return true;
+                  return true;
                 }
 
                 // method to be used outside the plugin
@@ -109,7 +109,7 @@
                     var cb_pre_open = option.cb_pre_open(obj);
 
                     if (cb_pre_open === false) {
-                        return false;
+                      return false;
                     }
 
                     // methods to be used outside the plugin
@@ -166,7 +166,7 @@
                             '<div class="sk-cube sk-cube2"></div>'+
                             '</div>';
                             break;
-                        case 'spinner-pulse':
+                          case 'spinner-pulse':
                             preloader += '<div class="sk-spinner sk-spinner-pulse"></div>';
                             break;
                         case 'chasing-dots':
@@ -267,32 +267,32 @@
                     }
                     blockshare.css(sharepos, '-1px');
                     blockshare.css({
-                        'color' : option.titleColor,
-                        'fill' : option.titleColor,
-                        'background-color' : option.titleBackground
+                      'color' : option.titleColor,
+                      'fill' : option.titleColor,
+                      'background-color' : option.titleBackground
                     });
 
                     blocktitle.css(option.titlePosition, '-1px');
 
                     blocktitle.css({
-                        'color' : option.titleColor,
-                        'background-color' : option.titleBackground
+                      'color' : option.titleColor,
+                      'background-color' : option.titleBackground
                     });
 
                     $('.vbox-close').css({
-                        'color' : option.closeColor,
-                        'background-color' : option.closeBackground
+                      'color' : option.closeColor,
+                      'background-color' : option.closeBackground
                     });
 
                     blockleft.css(option.numerationPosition, '-1px');
                     blockleft.css({
-                        'color' : option.numerationColor,
-                        'background-color' : option.numerationBackground
+                      'color' : option.numerationColor,
+                      'background-color' : option.numerationBackground
                     });
 
                     $('.vbox-next span, .vbox-prev span').css({
-                        'border-top-color' : option.arrowsColor,
-                        'border-right-color' : option.arrowsColor
+                      'border-top-color' : option.arrowsColor,
+                      'border-right-color' : option.arrowsColor
                     });
 
                     content.html('');
@@ -305,16 +305,16 @@
                     overlay.animate({opacity:1}, 250, function(){
 
                         if (obj.data('vbtype') == 'iframe') {
-                            loadIframe();
+                          loadIframe();
                         } else if (obj.data('vbtype') == 'inline') {
-                            loadInline();
+                          loadInline();
                         } else if (obj.data('vbtype') == 'ajax') {
-                            loadAjax();
+                          loadAjax();
                         } else if (obj.data('vbtype') == 'video') {
-                            loadVid(autoplay);
+                          loadVid(autoplay);
                         } else {
-                            content.html('<img src="'+dest+'">');
-                            preloadFirst();
+                          content.html('<img src="'+dest+'">');
+                          preloadFirst();
                         }
                         option.cb_post_open(obj, gallIndex, thenext, theprev);
                     });
@@ -372,50 +372,50 @@
                     theprev = items.eq( items.index(obj) - 1 );
 
                     if (!thenext.length && infinigall === true) {
-                        thenext = items.eq(0);
+                      thenext = items.eq(0);
                     }
 
                     // update gall numeration
                     if (items.length >= 1) {
-                        gallIndex = items.index(obj)+1;
-                        blocknum.html(gallIndex + ' / ' + items.length);
+                      gallIndex = items.index(obj)+1;
+                      blocknum.html(gallIndex + ' / ' + items.length);
                     } else {
-                        gallIndex = 1;
+                      gallIndex = 1;
                     }
                     if (numeratio === true) {
-                        blocknum.show();
+                      blocknum.show();
                     } else {
-                        blocknum.hide();
+                      blocknum.hide();
                     }
 
                     // update title
                     if (title !== '') {
-                        locktitle.show();
+                      blocktitle.show();
                     } else {
-                        blocktitle.hide();
+                      blocktitle.hide();
                     }
 
                     // update navigation arrows
                     if (!thenext.length && infinigall !== true) {
-                        $('.vbox-next').css('display', 'none');
-                        nextok = false;
+                      $('.vbox-next').css('display', 'none');
+                      nextok = false;
                     } else {
-                        $('.vbox-next').css('display', 'block');
-                        nextok = true;
+                      $('.vbox-next').css('display', 'block');
+                      nextok = true;
                     }
 
                     if (items.index(obj) > 0 || infinigall === true) {
-                        $('.vbox-prev').css('display', 'block');
-                        prevok = true;
+                      $('.vbox-prev').css('display', 'block');
+                      prevok = true;
                     } else {
-                        $('.vbox-prev').css('display', 'none');
-                        prevok = false;
+                      $('.vbox-prev').css('display', 'none');
+                      prevok = false;
                     }
                     // activate swipe
                     if (prevok === true || nextok === true) {
-                        content.on(TouchMouseEvent.DOWN, onDownEvent);
-                        content.on(TouchMouseEvent.MOVE, onMoveEvent);
-                        content.on(TouchMouseEvent.UP, onUpEvent);
+                      content.on(TouchMouseEvent.DOWN, onDownEvent);
+                      content.on(TouchMouseEvent.MOVE, onMoveEvent);
+                      content.on(TouchMouseEvent.UP, onUpEvent);
                     }
                 }
 
@@ -423,10 +423,10 @@
                 function navigateGall(destination) {
 
                     if (destination.length < 1) {
-                        return false;
+                      return false;
                     }
                     if (keyNavigationDisabled) {
-                        return false;
+                      return false;
                     }
                     keyNavigationDisabled = true;
 
@@ -444,16 +444,16 @@
 
                     // swipe out item
                     if (destination === theprev) {
-                        content.addClass('vbox-animated').addClass('swipe-right');
+                      content.addClass('vbox-animated').addClass('swipe-right');
                     }
                     if (destination === thenext) {
-                        content.addClass('vbox-animated').addClass('swipe-left');
+                      content.addClass('vbox-animated').addClass('swipe-left');
                     }
 
                     $preloader.show();
 
                     content.animate({
-                        opacity : 0,
+                      opacity : 0,
                     }, 500, function(){
 
                         overlay.css('background',overlayColor);
@@ -486,15 +486,15 @@
                 /* -------- KEYBOARD HANDLER -------- */
                 function keyboardHandler(e) {
                     if (e.keyCode === 27) { // esc
-                        closeVbox();
+                      closeVbox();
                     }
 
                     if (e.keyCode == 37 && prevok === true) { // left
-                        navigateGall(theprev);
+                      navigateGall(theprev);
                     }
 
                     if (e.keyCode == 39 && nextok === true) { // right
-                        navigateGall(thenext);
+                      navigateGall(thenext);
                     }
                 }
 
@@ -504,7 +504,7 @@
                     var cb_pre_close = option.cb_pre_close(obj, gallIndex, thenext, theprev);
 
                     if (cb_pre_close === false) {
-                        return false;
+                      return false;
                     }
 
                     $('body').off('keydown', keyboardHandler).removeClass('vbox-open');
@@ -512,9 +512,9 @@
                     obj.focus();
 
                     overlay.animate({opacity:0}, 500, function(){
-                    overlay.remove();
-                    keyNavigationDisabled = false;
-                    option.cb_post_close();
+                      overlay.remove();
+                      keyNavigationDisabled = false;
+                      option.cb_post_close();
                     });
                 }
 
@@ -627,7 +627,7 @@
                     var touchMouseEvent;
 
                     if (type == TouchMouseEvent.UP) {
-                        touchMouseEvent = normalizeEvent(type, event, null, null);
+                         touchMouseEvent = normalizeEvent(type, event, null, null);
                     } else {
                         touchMouseEvent = normalizeEvent(type, event, touch.pageX, touch.pageY);
                     }
@@ -657,17 +657,17 @@
 
                 /* -------- LOAD AJAX -------- */
                 function loadAjax(){
-                    $.ajax({
-                    url: dest,
-                    cache: false
-                    }).done(function( msg ) {
-                        content.html('<div class="vbox-inline">'+ msg +'</div>');
-                        preloadFirst();
+                  $.ajax({
+                  url: dest,
+                  cache: false
+                  }).done(function( msg ) {
+                      content.html('<div class="vbox-inline">'+ msg +'</div>');
+                      preloadFirst();
 
-                    }).fail(function() {
-                        content.html('<div class="vbox-inline"><p>Error retrieving contents, please retry</div>');
-                        updateoverlay();
-                    });
+                  }).fail(function() {
+                      content.html('<div class="vbox-inline"><p>Error retrieving contents, please retry</div>');
+                      updateoverlay();
+                  });
                 }
 
                 /* -------- LOAD IFRAME -------- */
@@ -689,9 +689,9 @@
                     var queryvars = stringAutoplay + getUrlParameter(dest);
 
                     if (videoObj.type == 'vimeo') {
-                        player = 'https://player.vimeo.com/video/';
+                      player = 'https://player.vimeo.com/video/';
                     } else if (videoObj.type == 'youtube') {
-                        player = 'https://www.youtube.com/embed/';
+                      player = 'https://www.youtube.com/embed/';
                     }
                     content.html('<iframe class="venoframe vbvid" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay" frameborder="0" src="'+player+videoObj.id+queryvars+'"></iframe>');
                     updateoverlay();
@@ -718,20 +718,20 @@
                 * get additional video url parameters
                 */
                 function getUrlParameter(name) {
-                    var result = '';
-                    var sPageURL = decodeURIComponent(name);
-                    var firstsplit = sPageURL.split('?');
+                  var result = '';
+                  var sPageURL = decodeURIComponent(name);
+                  var firstsplit = sPageURL.split('?');
 
-                    if (firstsplit[1] !== undefined) {
-                        var sURLVariables = firstsplit[1].split('&');
-                        var sParameterName;
-                        var i;
-                            for (i = 0; i < sURLVariables.length; i++) {
-                            sParameterName = sURLVariables[i].split('=');
-                            result = result + '&'+ sParameterName[0]+'='+ sParameterName[1];
-                        }
-                    }
-                    return encodeURI(result);
+                  if (firstsplit[1] !== undefined) {
+                      var sURLVariables = firstsplit[1].split('&');
+                      var sParameterName;
+                      var i;
+                      for (i = 0; i < sURLVariables.length; i++) {
+                          sParameterName = sURLVariables[i].split('=');
+                          result = result + '&'+ sParameterName[0]+'='+ sParameterName[1];
+                      }
+                  }
+                  return encodeURI(result);
                 }
 
                 /* -------- LOAD INLINE -------- */
